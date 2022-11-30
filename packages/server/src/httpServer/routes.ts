@@ -9,9 +9,11 @@ export const connection = async (
 ) => {
   try {
     const headers = req.headers
+    let connectid = headers?.connectid;
+    if(typeof connectid != 'string') connectid = '';
 
     // create connection (and check auth header)
-    const { status, connection, userData } = await connectionsManager.createConnection(headers?.authorization, req, res)
+    const { status, connection, userData } = await connectionsManager.createConnection(headers?.authorization, connectid, req, res)
 
     // on http status code
     if (status !== 200) {

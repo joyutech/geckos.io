@@ -47,12 +47,12 @@ export default class ConnectionsManagerServer {
     return userData
   }
 
-  async createConnection(authorization: string | undefined, request: IncomingMessage, response: OutgoingMessage) {
+  async createConnection(authorization: string | undefined, connectid: string, request: IncomingMessage, response: OutgoingMessage) {
     // get userData
     const userData: any = await this.getUserData(authorization, request, response)
     if (userData._statusCode) return { userData, status: userData._statusCode }
 
-    const newId = this.createId()
+    const newId = connectid || this.createId()
 
     const {
       ordered = false,
