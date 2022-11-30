@@ -1,5 +1,5 @@
 {
-  "name": "@geckos.io/server",
+  "name": "@joyu/geckosio-server",
   "version": "2.2.3",
   "description": "Real-time client/server communication over UDP using WebRTC and Node.js",
   "main": "./lib/index.js",
@@ -23,13 +23,14 @@
     "game",
     "server"
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/geckosio/geckos.io.git",
+    "url": "git://github.com/joyutech/geckos.io.git",
     "directory": "packages/server"
-  },
-  "bugs": {
-    "url": "https://github.com/geckosio/geckos.io/issues"
   },
   "homepage": "http://geckos.io",
   "directories": {
@@ -47,7 +48,7 @@
     "@yandeu/events": "0.0.6",
     "node-datachannel": "0.4.0"
   },
-  "funding": {
-    "url": "https://github.com/sponsors/yandeu"
+  "devDependencies": {
+    "@types/node": "^18.11.9"
   }
 }
